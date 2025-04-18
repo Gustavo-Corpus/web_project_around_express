@@ -12,6 +12,10 @@ app.use((req, res) => {
   res.status(404).send({ message: "Recurso solicitado no encontrado" });
 });
 
+app.use((err, req, res, next) => {
+  res.status(500).send({ message: "Ha ocurrido un error en el servidor" });
+});
+
 app.listen(PORT, () => {
   console.log(`App listening at port ${PORT}`);
 });

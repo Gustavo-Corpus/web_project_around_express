@@ -2,26 +2,35 @@
 
 ## Descripción
 
-Este proyecto es un servidor Express que proporciona una API REST para la aplicación "Around The U.S.". Maneja las solicitudes de usuarios y tarjetas, proporcionando los endpoints necesarios para obtener información de la base de datos.
+Este proyecto implementa el backend para la aplicación "Around The U.S.", proporcionando una API REST que maneja las solicitudes de usuarios y tarjetas. El servidor gestiona la obtención de datos de usuarios y tarjetas a través de endpoints específicos.
 
-## Tecnologías
+## Tecnologías y Técnicas Utilizadas
 
-- Express.js
-- Node.js
-- File System para manejo de archivos JSON
+- Express.js: Framework de Node.js para crear el servidor
+- Node.js: Entorno de ejecución
+- File System (fs): Para manejo de archivos JSON
+- ESLint: Para mantener la calidad del código
+- EditorConfig: Para consistencia en el estilo de código
+- Hot Reload: Para desarrollo más eficiente
 
 ## Directorios
 
-- `/data` — Archivos JSON que almacenan los datos
+- `/data` — Almacenamiento de datos JSON
 - `/routes` — Archivos de enrutamiento
 
 ## Ejecutar el proyecto
 
-`npm run start` — Para iniciar el servidor  
-`npm run dev` — Para iniciar el servidor con hot reload
+- `npm run start` — Inicia el servidor
+- `npm run dev` — Inicia el servidor con hot reload
 
 ## Endpoints
 
 - GET `/users` — Devuelve todos los usuarios
-- GET `/users/:id` — Devuelve un usuario específico por su \_id
+- GET `/users/:id` — Devuelve un usuario por su \_id
 - GET `/cards` — Devuelve todas las tarjetas
+
+## Estado de Respuestas
+
+- 200 - Solicitud exitosa
+- 404 - Recurso no encontrado
+- 500 - Error del servidor

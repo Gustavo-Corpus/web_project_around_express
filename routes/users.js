@@ -6,7 +6,9 @@ router.get("/", (req, res) => {
   const usersPath = path.join(__dirname, "..", "data", "users.json");
   fs.readFile(usersPath, { encoding: "utf8" }, (err, data) => {
     if (err) {
-      return res.status(500).send({ message: "Error al leer el archivo" });
+      return res
+        .status(500)
+        .send({ message: "An error has occurred on the server" });
     }
     res.send(JSON.parse(data));
   });
@@ -16,12 +18,14 @@ router.get("/:id", (req, res) => {
   const usersPath = path.join(__dirname, "..", "data", "users.json");
   fs.readFile(usersPath, { encoding: "utf8" }, (err, data) => {
     if (err) {
-      return res.status(500).send({ message: "Error al leer el archivo" });
+      return res
+        .status(500)
+        .send({ message: "An error has occurred on the server" });
     }
     const users = JSON.parse(data);
     const user = users.find((u) => u._id === req.params.id);
     if (!user) {
-      return res.status(404).send({ message: "ID de usuario no encontrado" });
+      return res.status(404).send({ message: "User ID not found" });
     }
     return res.send(user);
   });
